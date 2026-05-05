@@ -14,5 +14,5 @@ This afternoon five people have already gone through the portal, planning to hel
  __BREAKING NEWS; ROGUE GENIE SPOTTED:__
  This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area. 
 
-# 5/6 -9:35 AM:
+### 5/6 -9:35 AM:
 __New Insight:__ A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. These goblins have an entire civilization here. Tomorrow, I burn this world down and steal my computer back.” 
