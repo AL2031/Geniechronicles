@@ -1,4 +1,4 @@
-#The Genie Chronicles
+# The Genie Chronicles
 
 ### 5/4-10:45 AM: 
 Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later 
