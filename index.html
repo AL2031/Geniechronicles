@@ -5,92 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genie Chronicles</title>
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
-            color: #333;
+            background-color: #f5f4f8;
+            color: #222222;
         }
         header {
-            background-color: #2c3e50;
-            color: #f1c40f;
-            padding: 30px 0;
+            background-color: #2a1b40;
+            color: #ffd700;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 5px solid #8e44ad;
+            border-bottom: 5px solid #6c5ce7;
         }
         header h1 {
             margin: 0;
-            font-size: 3rem;
+            font-size: 2.8rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
         header p {
-            margin: 5px 0 0 0;
-            color: #ecf0f1;
+            margin: 10px 0 0 0;
+            color: #e0d0f0;
             font-style: italic;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-        main {
-            flex: 3;
-            min-width: 300px;
-            margin-right: 20px;
-        }
-        aside {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .article {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 5px solid #34495e;
-        }
-        .date-tag {
-            font-weight: bold;
-            color: #8e44ad;
             font-size: 1.1rem;
-            margin-bottom: 10px;
-            display: block;
         }
-        .ad-box {
-            border: 2px dashed #bdc3c7;
-            padding: 20px;
-            text-align: center;
-            background-color: #fffde7;
-            border-radius: 5px;
+        .wrapper {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: table;
+            width: 100%;
         }
-        .ad-box.roblox {
-            background-color: #e8f4f8;
-            border-color: #3498db;
+        .main-content {
+            display: table-cell;
+            width: 70%;
+            vertical-align: top;
+            padding-right: 30px;
         }
-        .ad-box h3 {
-            margin-top: 0;
-            font-size: 0.8rem;
+        .sidebar {
+            display: table-cell;
+            width: 30%;
+            vertical-align: top;
+        }
+        .article-card {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid #6c5ce7;
+        }
+        .date-header {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #6c5ce7;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            color: #7f8c8d;
             letter-spacing: 1px;
         }
-        .video-container {
+        .story-text {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            white-space: pre-line;
+        }
+        .ad-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            border: 2px dashed #b2bec3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .ad-container.roblox-ad {
+            border-color: #0984e3;
+            background-color: #f1f9ff;
+        }
+        .ad-label {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #636e72;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+        .ad-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d3436;
+            text-align: center;
+        }
+        .ad-description {
+            font-size: 0.95rem;
+            color: #636e72;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .video-box {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
         }
-        .video-container iframe {
+        .video-box iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -98,33 +128,42 @@
             height: 100%;
             border: 0;
         }
-        .ad-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #fff;
-            background-color: #e74c3c;
-            padding: 8px 12px;
+        .ad-btn {
+            display: block;
+            text-align: center;
+            background-color: #d63031;
+            color: #ffffff;
+            padding: 10px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 3px;
+            border-radius: 4px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
-        .ad-link.roblox-btn {
-            background-color: #3498db;
+        .ad-btn:hover {
+            background-color: #b21f1f;
+        }
+        .ad-btn.roblox-btn {
+            background-color: #00b894;
+        }
+        .ad-btn.roblox-btn:hover {
+            background-color: #00a383;
         }
         footer {
-            background-color: #2c3e50;
-            color: #fff;
+            background-color: #2a1b40;
+            color: #b2bec3;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 50px;
             font-size: 0.9rem;
+            border-top: 4px solid #6c5ce7;
         }
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            main {
-                margin-right: 0;
+            .main-content, .sidebar {
+                display: block;
+                width: 100%;
+                padding-right: 0;
             }
         }
     </style>
@@ -133,94 +172,112 @@
 
     <header>
         <h1>Genie Chronicles</h1>
-        <p>The unfiltered timeline of events</p>
+        <p>Live Timeline & Information Feed</p>
     </header>
 
-    <div class="container">
-        <main>
-            <div class="article">
-                <span class="date-tag">2/4-10:45 AM</span>
-                <p>Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later</p>
+    <div class="wrapper">
+        <div class="main-content">
+            
+            <!-- 2/4-10:45 AM -->
+            <div class="article-card">
+                <div class="date-header">2/4-10:45 AM</div>
+                <p class="story-text">Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/4-3:25 PM</span>
-                <p>BREAKING NEWS: Today, a creature that many call a goblin has been seen emerging from the portal. It stole a resident of the area's computer, this is and exclusive story from the victim: “So, it was just like any other day” reported Vincent, a 13 year old living on that street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: “Hi, my name is: Alan” the moment I opened the door, it sprang inside and STOLE MY COMPUTER” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”</p>
+            <!-- 2/4-3:25 PM -->
+            <div class="article-card">
+                <div class="date-header">2/4-3:25 PM</div>
+                <p class="story-text">BREAKING NEWS: Today, a creature that many call a goblin has been seen emerging from the portal. It stole a resident of the area's computer, this is and exclusive story from the victim: “So, it was just like any other day” reported Vincent, a 13 year old living on that street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: “Hi, my name is: Alan” the moment I opened the door, it sprang inside and STOLE MY COMPUTER” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/5- 2:14 PM</span>
-                <p>This afternoon five people have already gone through the portal, planning to help Vincent get his computer back. Vincent has put a $1,000,000 bounty on Alan the goblins head. Vincent has also gone through the portal.</p>
+            <!-- 2/5- 2:14 PM -->
+            <div class="article-card">
+                <div class="date-header">2/5- 2:14 PM</div>
+                <p class="story-text">This afternoon five people have already gone through the portal, planning to help Vincent get his computer back. Vincent has put a $1,000,000 bounty on Alan the goblins head. Vincent has also gone through the portal.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/5- 4:35 PM</span>
-                <p>BREAKING NEWS; ROGUE GENIE SPOTTED: This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area.</p>
+            <!-- 2/5- 4:35 PM -->
+            <div class="article-card">
+                <div class="date-header">2/5- 4:35 PM</div>
+                <p class="story-text">BREAKING NEWS; ROGUE GENIE SPOTTED: This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/6 -9:35 AM</span>
-                <p>New Insight: A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world”</p>
+            <!-- 2/6 -9:35 AM -->
+            <div class="article-card">
+                <div class="date-header">2/6 -9:35 AM</div>
+                <p class="story-text">New Insight: A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world”</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/7 -12:15 PM</span>
-                <p>WE ARE NOT ALONE IN THE UNIVERSE: Early this morning, a new signal, again transmitted from the unknown portal has been received, believed also to be Vincent. It states that the creature that stole his laptop was not, in fact from another dimension, but from a distant planet, Kepler 452b.</p>
+            <!-- 2/7 -12:15 PM -->
+            <div class="article-card">
+                <div class="date-header">2/7 -12:15 PM</div>
+                <p class="story-text">WE ARE NOT ALONE IN THE UNIVERSE: Early this morning, a new signal, again transmitted from the unknown portal has been received, believed also to be Vincent. It states that the creature that stole his laptop was not, in fact from another dimension, but from a distant planet, Kepler 452b.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/15</span>
-                <p>It has been a while since the last post due to legal reasons and the government trying to conceal this information, but as we have just won a court case against the government, we will now unveil this information.  There has been a recent spike in UFO sightings, and as signals explain, these are because the Goblins and Orks have ended their 200 year long war and are now on their way to invade the Earth. Vincent has revealed he has taken a quest from a rat man, the only way to save the Earth.</p>
+            <!-- 2/15 -->
+            <div class="article-card">
+                <div class="date-header">2/15</div>
+                <p class="story-text">It has been a while since the last post due to legal reasons and the government trying to conceal this information, but as we have just won a court case against the government, we will now unveil this information.  There has been a recent spike in UFO sightings, and as signals explain, these are because the Goblins and Orks have ended their 200 year long war and are now on their way to invade the Earth. Vincent has revealed he has taken a quest from a rat man, the only way to save the Earth.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/17</span>
-                <p>Yesterday, there was a record amount of UFO sightings. Over 770,000 people have reported sightings of glowing lights traveling at extremely fast speeds.</p>
+            <!-- 2/17 -->
+            <div class="article-card">
+                <div class="date-header">2/17</div>
+                <p class="story-text">Yesterday, there was a record amount of UFO sightings. Over 770,000 people have reported sightings of glowing lights traveling at extremely fast speeds.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/19</span>
-                <p>The first signs of violence has broken out between the humans and Goblins/Orks. A UFO fired at a military base at the Puget Sound without reason. The military base retaliated by firing back and shooting the UFO. Sadly, the UFO self destructed, rendering the wreckage useless.</p>
+            <!-- 2/19 -->
+            <div class="article-card">
+                <div class="date-header">2/19</div>
+                <p class="story-text">The first signs of violence has broken out between the humans and Goblins/Orks. A UFO fired at a military base at the Puget Sound without reason. The military base retaliated by firing back and shooting the UFO. Sadly, the UFO self destructed, rendering the wreckage useless.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/20</span>
-                <p>Vincent has recently assassinated the Goblin King and killed the Ork Elder, sparking even more tension between the two planets. Vincent now only has one quest left, to find the secret chest, guarded by 200 armed guards, destroy it, and return to the Rat Man. He only has one day to complete this quest.</p>
+            <!-- 2/20 -->
+            <div class="article-card">
+                <div class="date-header">2/20</div>
+                <p class="story-text">Vincent has recently assassinated the Goblin King and killed the Ork Elder, sparking even more tension between the two planets. Vincent now only has one quest left, to find the secret chest, guarded by 200 armed guards, destroy it, and return to the Rat Man. He only has one day to complete this quest.</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">2/21</span>
-                <p>SUCCESS! : Vincent has successfully completed his quest and returned safely, he has suffered minor injuries, but has saved Earth. He plans to go on a nice long cruise to relax after his Journey. The cruise will depart from Argentina and is called the “MV Hondius”</p>
+            <!-- 2/21 -->
+            <div class="article-card">
+                <div class="date-header">2/21</div>
+                <p class="story-text">SUCCESS! : Vincent has successfully completed his quest and returned safely, he has suffered minor injuries, but has saved Earth. He plans to go on a nice long cruise to relax after his Journey. The cruise will depart from Argentina and is called the “MV Hondius”</p>
             </div>
 
-            <div class="article">
-                <span class="date-tag">4-2</span>
-                <p>VIRUS OUTBREAK! : A virus has been detected on the cruise ship Vincent was on, Vincent only now realizes he destroyed the world of Goblins but forgot his laptop. The virus on the cruise ship is called “Hanta Virus”</p>
-            </div>
-        </main>
-
-        <aside>
-            <div class="ad-box roblox">
-                <h3>Sponsored Advertisement</h3>
-                <h4>Check out Player333!</h4>
-                <p>Don't let goblins take your setup. Watch a random guy play games for no reason instead!</p>
-                <a class="ad-link roblox-btn" href="https://www.youtube.com/@AverageRobloxplayer333" target="_blank">Visit Channel</a>
+            <!-- 4-2 -->
+            <div class="article-card">
+                <div class="date-header">4-2</div>
+                <p class="story-text">VIRUS OUTBREAK! : A virus has been detected on the cruise ship Vincent was on, Vincent only now realizes he destroyed the world of Goblins but forgot his laptop. The virus on the cruise ship is called “Hanta Virus”</p>
             </div>
 
-            <div class="ad-box">
-                <h3>Sponsored Video</h3>
-                <div class="video-container">
+        </div>
+
+        <div class="sidebar">
+            
+            <!-- YouTube Channel Ad -->
+            <div class="ad-container roblox-ad">
+                <span class="ad-label">Sponsored Channel</span>
+                <div class="ad-title">@AverageRobloxplayer333</div>
+                <div class="ad-description">Check out the latest Roblox strategies, gameplay streams, and videos directly on YouTube!</div>
+                <a class="ad-btn roblox-btn" href="https://www.youtube.com/@AverageRobloxplayer333" target="_blank">Visit Channel</a>
+            </div>
+
+            <!-- YouTube Video Ad -->
+            <div class="ad-container">
+                <span class="ad-label">Sponsored Advertisement</span>
+                <div class="video-box">
                     <iframe src="https://www.youtube.com/embed/0oX7N8FTlww" allowfullscreen></iframe>
                 </div>
-                <h4>Lou (Mr. Batchelder the Tooth Fairy: Oral Health Checkups (Sponsered by Mighty Mouth)</h4>
-                <p>Keep your teeth clean and save up to $2,000 for every cavity you prevent!</p>
-                <a class="ad-link" href="https://www.youtube.com/watch?v=0oX7N8FTlww" target="_blank">Watch on YouTube</a>
+                <div class="ad-title">Lou the Tooth Fairy</div>
+                <div class="ad-description">Oral Health Checkups: Annual checkups pay off and keep your teeth healthy.</div>
+                <a class="ad-btn" href="https://www.youtube.com/watch?v=0oX7N8FTlww" target="_blank">Watch on YouTube</a>
             </div>
-        </aside>
+
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Genie Chronicles. All rights reserved.</p>
+        <p>&copy; 2026 Genie Chronicles. All feed entries verbatim.</p>
     </footer>
 
 </body>
