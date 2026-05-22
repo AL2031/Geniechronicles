@@ -3,52 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genie Chronicles | Portal & Interstellar Breaking News</title>
+    <title>Genie Chronicles</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #222;
+            background-color: #f4f6f9;
+            color: #333;
         }
         header {
-            background-color: #1c2833;
-            color: #f4d03f;
-            padding: 35px 0;
+            background-color: #2c3e50;
+            color: #f1c40f;
+            padding: 30px 0;
             text-align: center;
-            border-bottom: 6px solid #9b59b6;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #8e44ad;
         }
         header h1 {
             margin: 0;
-            font-size: 3.5rem;
-            letter-spacing: 3px;
+            font-size: 3rem;
             text-transform: uppercase;
-            font-family: 'Times New Roman', serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
         }
         header p {
-            margin: 8px 0 0 0;
-            font-style: italic;
+            margin: 5px 0 0 0;
             color: #ecf0f1;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-        .ticker {
-            background-color: #9b59b6;
-            color: #fff;
-            padding: 8px 0;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-style: italic;
         }
         .container {
-            max-width: 1250px;
-            margin: 25px auto;
+            max-width: 1200px;
+            margin: 20px auto;
             display: flex;
             flex-wrap: wrap;
             padding: 0 20px;
@@ -56,98 +41,54 @@
         main {
             flex: 3;
             min-width: 300px;
-            margin-right: 25px;
+            margin-right: 20px;
         }
         aside {
             flex: 1;
-            min-width: 290px;
+            min-width: 280px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
-        }
-        .timeline-label {
-            background: #1c2833;
-            color: #fff;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            gap: 20px;
         }
         .article {
             background-color: #fff;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-radius: 4px;
-            border-top: 4px solid #34495e;
-            position: relative;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #34495e;
         }
-        .article.breaking {
-            border-top: 4px solid #e74c3c;
-            background-color: #fffcfc;
-        }
-        .article h2 {
-            margin-top: 0;
-            color: #111;
-            font-size: 1.8rem;
-            line-height: 1.3;
-        }
-        .date {
-            font-size: 0.85rem;
-            color: #e74c3c;
-            text-transform: uppercase;
+        .date-tag {
             font-weight: bold;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-        .article.normal-news .date {
-            color: #2980b9;
-        }
-        .quote {
-            background: #fdfefe;
-            border-left: 4px solid #9b59b6;
-            margin: 20px 10px;
-            padding: 15px 20px;
-            font-style: italic;
-            color: #444;
-            box-shadow: inset 0 0 4px rgba(0,0,0,0.02);
+            color: #8e44ad;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: block;
         }
         .ad-box {
             border: 2px dashed #bdc3c7;
             padding: 20px;
             text-align: center;
             background-color: #fffde7;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-radius: 5px;
         }
-        .ad-box.roblox-ad {
-            background-color: #ebf5fb;
-            border-color: #2980b9;
+        .ad-box.roblox {
+            background-color: #e8f4f8;
+            border-color: #3498db;
         }
         .ad-box h3 {
             margin-top: 0;
-            color: #7f8c8d;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-        }
-        .ad-box.roblox-ad h3 {
-            color: #2980b9;
+            color: #7f8c8d;
+            letter-spacing: 1px;
         }
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
         }
         .video-container iframe {
             position: absolute;
@@ -155,51 +96,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-        }
-        .ad-title {
-            font-size: 1.2rem;
-            margin: 10px 0;
-            color: #111;
-            font-weight: bold;
+            border: 0;
         }
         .ad-link {
             display: inline-block;
-            margin-top: 12px;
-            padding: 8px 16px;
+            margin-top: 10px;
+            color: #fff;
             background-color: #e74c3c;
-            color: white;
+            padding: 8px 12px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background 0.2s;
+            border-radius: 3px;
         }
-        .ad-link:hover {
-            background-color: #c0392b;
-        }
-        .roblox-btn {
-            background-color: #2980b9;
-        }
-        .roblox-btn:hover {
-            background-color: #1f618d;
-        }
-        .roblox-logo {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1.5rem;
-            color: #111;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
+        .ad-link.roblox-btn {
+            background-color: #3498db;
         }
         footer {
-            background-color: #1c2833;
-            color: #bdc3c7;
+            background-color: #2c3e50;
+            color: #fff;
             text-align: center;
-            padding: 25px 0;
-            margin-top: 50px;
+            padding: 15px 0;
+            margin-top: 30px;
             font-size: 0.9rem;
-            border-top: 4px solid #9b59b6;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
@@ -213,122 +133,94 @@
 
     <header>
         <h1>Genie Chronicles</h1>
-        <p>The Official Live Archive of the Vinchenzo Lane Anomalies & Earth Defenses</p>
+        <p>The unfiltered timeline of events</p>
     </header>
-
-    <div class="ticker">
-        Live Feed: Chronological Coverage Sequence (Oldest to Newest Feed)
-    </div>
 
     <div class="container">
         <main>
-            <div class="timeline-label">Chronological News Stream</div>
-
-            <div class="article normal-news">
-                <div class="date">Feb 4 — 10:45 AM</div>
-                <h2>Spatiotemporal Anomaly: Mysterious Portal Manifests on Vinchenzo Lane</h2>
-                <p>An extraordinary event occurred yesterday afternoon at 15257 Vinchenzo Lane. Residents reported a massive, humming energy rift that appeared to rip open the fabric of reality, creating a portal leading directly to an unknown alternate dimension. Experts are monitoring the structural integrity of the tear. Further updates will be broadcasted as the situation develops.</p>
+            <div class="article">
+                <span class="date-tag">2/4-10:45 AM</span>
+                <p>Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Feb 4 — 3:25 PM</div>
-                <h2>BREAKING NEWS: Extraterrestrial Anomaly 'Alan the Goblin' Launches Sudden Computer Heist</h2>
-                <p>Terror and confusion struck Vinchenzo Lane this afternoon as a biological entity, resembling a classic mythological goblin, materialized from the newly formed portal. In a bizarre turn of events, the creature executed a home invasion to steal a high-end computing setup.</p>
-                <p>We have secured an exclusive report directly from the victim of this interdimensional theft:</p>
-                <div class="quote">
-                    “So, it was just like any other day,” reported Vincent, a 13-year-old living on the affected street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: ‘Hi, my name is: Alan’ the moment I opened the door, it sprang inside and STOLE MY COMPUTER!” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”
-                </div>
+            <div class="article">
+                <span class="date-tag">2/4-3:25 PM</span>
+                <p>BREAKING NEWS: Today, a creature that many call a goblin has been seen emerging from the portal. It stole a resident of the area's computer, this is and exclusive story from the victim: “So, it was just like any other day” reported Vincent, a 13 year old living on that street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: “Hi, my name is: Alan” the moment I opened the door, it sprang inside and STOLE MY COMPUTER” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”</p>
             </div>
 
-            <div class="article normal-news">
-                <div class="date">Feb 5 — 2:14 PM</div>
-                <h2>Retaliation: Five Citizens Enter Anomaly Under $1,000,000 Goblin Bounty</h2>
-                <p>The neighborhood conflict has officially scaled up. This afternoon, a rescue and retrieval vanguard consisting of five brave individuals crossed the dimensional threshold to support Vincent in his tracking efforts. Motivated by absolute justice, Vincent has placed a staggering $1,000,000 bounty on Alan the Goblin's head. Reports confirm Vincent has also entered the portal to lead the hunt himself.</p>
+            <div class="article">
+                <span class="date-tag">2/5- 2:14 PM</span>
+                <p>This afternoon five people have already gone through the portal, planning to help Vincent get his computer back. Vincent has put a $1,000,000 bounty on Alan the goblins head. Vincent has also gone through the portal.</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Feb 5 — 4:35 PM</div>
-                <h2>BREAKING NEWS: Rogue Genie Sighted Near Portal Vector</h2>
-                <p>The paranormal activity surrounding 15257 Vinchenzo Lane continues to expand. Late this afternoon, eyewitnesses confirmed the manifestation of a rogue genie hovering in close proximity to the initial breach point. Arcane researchers strongly hypothesize that this entity's appearance is directly related to the local cascading portal instabilities.</p>
+            <div class="article">
+                <span class="date-tag">2/5- 4:35 PM</span>
+                <p>BREAKING NEWS; ROGUE GENIE SPOTTED: This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area.</p>
             </div>
 
-            <div class="article normal-news">
-                <div class="date">Feb 6 — 9:35 AM</div>
-                <h2>New Insight: Transdimensional Radio Beacon Pinpoints a 'Frozen World'</h2>
-                <p>A breakthrough transmission has bypassed the spatial barrier. A localized radio signature, behaving like a guided SOS beacon, has been emitted directly from the portal wave. Technical tracking identifies the voice as Vincent's. The decrypted broadcast reads:</p>
-                <div class="quote">
-                    “Hello guys, this is Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world.”
-                </div>
+            <div class="article">
+                <span class="date-tag">2/6 -9:35 AM</span>
+                <p>New Insight: A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world”</p>
             </div>
 
-            <div class="article normal-news">
-                <div class="date">Feb 7 — 12:15 PM</div>
-                <h2>WE ARE NOT ALONE IN THE UNIVERSE: Threat Traced Back to Planet Kepler-452b</h2>
-                <p>A foundational shift in our cosmic understanding occurred early this morning. A secondary automated data feed from the rift—believed to be managed by Vincent—reveals a shocking biological discovery. The entity designated as 'Alan,' who stole the personal laptop, is not an interdimensional spirit, but an organic extraterrestrial originating from a distant habitable planet: <strong>Kepler-452b</strong>.</p>
+            <div class="article">
+                <span class="date-tag">2/7 -12:15 PM</span>
+                <p>WE ARE NOT ALONE IN THE UNIVERSE: Early this morning, a new signal, again transmitted from the unknown portal has been received, believed also to be Vincent. It states that the creature that stole his laptop was not, in fact from another dimension, but from a distant planet, Kepler 452b.</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Feb 15</div>
-                <h2>Censorship Lifted: Legal Triumph Over Government Concealment Exposes Impending Influx</h2>
-                <p>Followers of Genie Chronicles will note a significant gap since our last update. This was forced by aggressive federal legal actions and government attempts to suppress this existential information from the public. However, following a decisive court victory against federal agencies, we have secured our constitutional right to publish.</p>
-                <p>Astronomical sensors indicate a massive, terrifying spike in UFO activities. Intercepted signals disclose that the Goblins and Orks have officially declared a truce, ending their historic 200-year-long war to launch a cooperative planetary invasion of Earth. To counter this, Vincent has accepted an ancient cosmic quest from an enigmatic "Rat Man"—historically tracked as our species' sole path to salvation.</p>
+            <div class="article">
+                <span class="date-tag">2/15</span>
+                <p>It has been a while since the last post due to legal reasons and the government trying to conceal this information, but as we have just won a court case against the government, we will now unveil this information.  There has been a recent spike in UFO sightings, and as signals explain, these are because the Goblins and Orks have ended their 200 year long war and are now on their way to invade the Earth. Vincent has revealed he has taken a quest from a rat man, the only way to save the Earth.</p>
             </div>
 
-            <div class="article normal-news">
-                <div class="date">Feb 17</div>
-                <h2>Sky Watch: Record-Shattering 770,000 UFO Sightings Confirmed Globally</h2>
-                <p>Global atmospheric tracking systems have completely overloaded over the past 24 hours. A record-breaking 770,000 civilians worldwide have documented visual sightings of bright, glowing mechanical anomalies executing hypersonic maneuvers across upper-altitude paths.</p>
+            <div class="article">
+                <span class="date-tag">2/17</span>
+                <p>Yesterday, there was a record amount of UFO sightings. Over 770,000 people have reported sightings of glowing lights traveling at extremely fast speeds.</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Feb 19</div>
-                <h2>Hostilities Begin: Extraterrestrial Vessel Attacks Puget Sound Military Base</h2>
-                <p>The cold war has officially turned violent. An unidentified scout craft initiated an unprovoked kinetic strike on a sovereign military base stationed at the Puget Sound. Defensive arrays retaliated immediately, firing heavy ordinance and successfully hitting the invading UFO. Unfortunately, the craft executed an immediate high-energy self-destruct cycle upon impact, rendering the remaining debris entirely useless for scientific analysis.</p>
+            <div class="article">
+                <span class="date-tag">2/19</span>
+                <p>The first signs of violence has broken out between the humans and Goblins/Orks. A UFO fired at a military base at the Puget Sound without reason. The military base retaliated by firing back and shooting the UFO. Sadly, the UFO self destructed, rendering the wreckage useless.</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Feb 20</div>
-                <h2>Sovereigns Fallen: Vincent Assassinated Goblin King and Ork Elder in Deep Space</h2>
-                <p>Direct dispatches reveal that Vincent has dealt a catastrophic blow to the invading hierarchy. Operating deep within enemy lines, he successfully assassinated both the Goblin King and the Ork Elder, throwing their combined fleet command into disarray and spiking deep political tensions between the two alien worlds. Vincent currently faces his final trial: locate and destroy a mysterious, heavily guarded secret chest defended by 200 elite armed guards, then return to the Rat Man. He has only 24 hours remaining to complete the trial.</p>
+            <div class="article">
+                <span class="date-tag">2/20</span>
+                <p>Vincent has recently assassinated the Goblin King and killed the Ork Elder, sparking even more tension between the two planets. Vincent now only has one quest left, to find the secret chest, guarded by 200 armed guards, destroy it, and return to the Rat Man. He only has one day to complete this quest.</p>
             </div>
 
-            <div class="article normal-news">
-                <div class="date">Feb 21 — SUCCESS!</div>
-                <h2>EARTH IS SAVED: Quest Completed; Vincent Boarding MV Hondius for Recovery</h2>
-                <p>Incredible news of global salvation! Vincent has successfully shattered the final chest defense grid, safely returning to the Rat Man with minor operational injuries. With the imminent invasion successfully broken, Vincent has finalized travel arrangements to undergo a long, well-deserved period of rest and relaxation. He is scheduled to depart on an oceanic cruise from Argentina aboard the polar research vessel <strong>"MV Hondius."</strong></p>
+            <div class="article">
+                <span class="date-tag">2/21</span>
+                <p>SUCCESS! : Vincent has successfully completed his quest and returned safely, he has suffered minor injuries, but has saved Earth. He plans to go on a nice long cruise to relax after his Journey. The cruise will depart from Argentina and is called the “MV Hondius”</p>
             </div>
 
-            <div class="article breaking">
-                <div class="date">Apr 2 — VIRUS OUTBREAK!</div>
-                <h2>PANDEMIC BREAKOUT: Hanta Virus Hits MV Hondius as Dark Realization Sets In</h2>
-                <p>The celebration has come to an abrupt, terrifying halt. Medical biological quarantine protocols have been enacted aboard the MV Hondius cruise ship after a virulent strain of "Hanta Virus" was detected spreading among passengers. Amidst the viral containment lockdown, a chilling update has emerged from Vincent's quarters: though he completely annihilated the warmongering alien infrastructure, <em>he left his stolen laptop behind on their planet.</em> The true nature of this virus remains unconfirmed.</p>
+            <div class="article">
+                <span class="date-tag">4-2</span>
+                <p>VIRUS OUTBREAK! : A virus has been detected on the cruise ship Vincent was on, Vincent only now realizes he destroyed the world of Goblins but forgot his laptop. The virus on the cruise ship is called “Hanta Virus”</p>
             </div>
         </main>
 
         <aside>
-            <div class="ad-box roblox-ad">
-                <h3>Sponsored Content</h3>
-                <div class="roblox-logo">ROBLOX</div>
-                <div class="ad-title">Follow Player333!</div>
-                <p>Don't let rogue goblins steal your computer! Watch a random guy play games for no reason!</p>
-                <p><strong>No Streams &  Bad Editing!</strong></p>
-                <a class="ad-link roblox-btn" href="https://www.youtube.com/@AverageRobloxplayer333" target="_blank">Subscribe on YouTube</a>
+            <div class="ad-box roblox">
+                <h3>Sponsored Advertisement</h3>
+                <h4>Check out @AverageRobloxplayer333!</h4>
+                <p>Don't let goblins take your setup. Level up your gaming strategy and subscribe for top-tier Roblox content today!</p>
+                <a class="ad-link roblox-btn" href="https://www.youtube.com/@AverageRobloxplayer333" target="_blank">Visit Channel</a>
             </div>
 
             <div class="ad-box">
-                <h3>Commercial Advertisement</h3>
+                <h3>Sponsored Video</h3>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/0oX7N8FTlww" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/0oX7N8FTlww" allowfullscreen></iframe>
                 </div>
-                <div class="ad-title">Lou the Tooth Fairy Checkups</div>
-                <p>Goblins, Genies, and Orks might ignore basic dental hygiene, but you shouldn't! Prevent cavities and save over $2,000 with annual oral health checkups.</p>
+                <h4>Lou the Tooth Fairy: Oral Health Checkups</h4>
+                <p>Keep your teeth clean and save up to $2,000 for every cavity you prevent!</p>
                 <a class="ad-link" href="https://www.youtube.com/watch?v=0oX7N8FTlww" target="_blank">Watch on YouTube</a>
             </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2026 Genie Chronicles. All investigative, chronological, and cross-planetary rights reserved.</p>
+        <p>&copy; 2026 Genie Chronicles. All rights reserved.</p>
     </footer>
 
 </body>
