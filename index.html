@@ -77,13 +77,14 @@
             white-space: pre-line;
         }
         
-        /* --- NEW TABS STYLING --- */
+        /* --- TABS STYLING --- */
         .tabs-container {
             display: flex;
             gap: 10px;
             margin-bottom: 25px;
             border-bottom: 2px solid #e0d0f0;
             padding-bottom: 12px;
+            flex-wrap: wrap;
         }
         .tab-btn {
             background-color: #e0d0f0;
@@ -217,8 +218,9 @@
         <div class="main-content">
             
             <div class="tabs-container">
-                <button class="tab-btn active" onclick="switchStory(event, 'story-1')">Vinchenzo Lane</button>
-                <button class="tab-btn" onclick="switchStory(event, 'story-2')">Weird Reasearch</button>
+                <button class="tab-btn active" onclick="switchStory(event, 'story-1')">Story One</button>
+                <button class="tab-btn" onclick="switchStory(event, 'story-2')">Story Two</button>
+                <button class="tab-btn" onclick="switchStory(event, 'story-3')">Story Three</button>
             </div>
             
             <div id="story-1" class="tab-content active">
@@ -285,22 +287,21 @@
 
             <div id="story-2" class="tab-content">
                 <div class="article-card">
-                    <div class="date-header">Month/Day - Time PM</div>
-                    <p class="story-text">This is a placeholder for your second story timeline! 
-                    
-                    You can start adding your article structures here just like Story One, and they will only appear when this tab is selected.</p>
+                    <div class="date-header">Month/Day - Time</div>
+                    <p class="story-text">This is your second story timeline! Replace this text with updates for your second narrative arc.</p>
                 </div>
-                
+            </div>
+
+            <div id="story-3" class="tab-content">
                 <div class="article-card">
-                    <div class="date-header">Month/Day - Next Update</div>
-                    <p class="story-text">Another entry example goes here...</p>
+                    <div class="date-header">Month/Day - Time</div>
+                    <p class="story-text">This is your third story timeline! Replace this text with updates for your third narrative arc.</p>
                 </div>
             </div>
 
         </div>
 
         <div class="sidebar">
-            
             <div class="ad-container roblox-ad">
                 <span class="ad-label">Sponsored by Alex Lin's shadow</span>
                 <div class="ad-title">Subscribe to Player333!</div>
@@ -334,7 +335,6 @@
                 <div class="ad-description">Get Taco Time Today!</div>
                 <a class="ad-btn" href="https://www.youtube.com/watch?v=YB5QxUddhJg" target="_blank">Watch on YouTube</a>
             </div>
-
         </div>
     </div>
 
@@ -344,19 +344,16 @@
 
     <script>
         function switchStory(evt, storyId) {
-            // Hide all tab elements
             var tabContent = document.getElementsByClassName("tab-content");
             for (var i = 0; i < tabContent.length; i++) {
                 tabContent[i].classList.remove("active");
             }
 
-            // Remove active style from all buttons
             var tabButtons = document.getElementsByClassName("tab-btn");
             for (var i = 0; i < tabButtons.length; i++) {
                 tabButtons[i].classList.remove("active");
             }
 
-            // Show the current story block and apply active styling to clicked button
             document.getElementById(storyId).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
