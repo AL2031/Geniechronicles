@@ -76,6 +76,44 @@
             color: #2c3e50;
             white-space: pre-line;
         }
+        
+        /* --- NEW TABS STYLING --- */
+        .tabs-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0d0f0;
+            padding-bottom: 12px;
+        }
+        .tab-btn {
+            background-color: #e0d0f0;
+            color: #2a1b40;
+            border: none;
+            padding: 12px 24px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+        }
+        .tab-btn:hover {
+            background-color: #6c5ce7;
+            color: #ffffff;
+        }
+        .tab-btn.active {
+            background-color: #6c5ce7;
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(108, 92, 231, 0.4);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* ------------------------ */
+
         .ad-container {
             background-color: #ffffff;
             padding: 20px;
@@ -178,83 +216,91 @@
     <div class="wrapper">
         <div class="main-content">
             
-            <!-- 2/4-10:45 AM -->
-            <div class="article-card">
-                <div class="date-header">2/4-10:45 AM</div>
-                <p class="story-text">Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later</p>
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchStory(event, 'story-1')">Story One</button>
+                <button class="tab-btn" onclick="switchStory(event, 'story-2')">Story Two</button>
+            </div>
+            
+            <div id="story-1" class="tab-content active">
+                <div class="article-card">
+                    <div class="date-header">2/4-10:45 AM</div>
+                    <p class="story-text">Yesterday afternoon something most interesting happened at 15257 Vinchenzo lane. A large, mysterious portal that seems to lead to another dimensions seemed to open. Further updates will be sent later</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/4-3:25 PM</div>
+                    <p class="story-text">BREAKING NEWS: Today, a creature that many call a goblin has been seen emerging from the portal. It stole a resident of the area's computer, this is and exclusive story from the victim: “So, it was just like any other day” reported Vincent, a 13 year old living on that street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: “Hi, my name is: Alan” the moment I opened the door, it sprang inside and STOLE MY COMPUTER” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/5- 2:14 PM</div>
+                    <p class="story-text">This afternoon five people have already gone through the portal, planning to help Vincent get his computer back. Vincent has put a $1,000,000 bounty on Alan the goblins head. Vincent has also gone through the portal.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/5- 4:35 PM</div>
+                    <p class="story-text">BREAKING NEWS; ROGUE GENIE SPOTTED: This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/6 -9:35 AM</div>
+                    <p class="story-text">New Insight: A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world”</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/7 -12:15 PM</div>
+                    <p class="story-text">WE ARE NOT ALONE IN THE UNIVERSE: Early this morning, a new signal, again transmitted from the unknown portal has been received, believed also to be Vincent. It states that the creature that stole his laptop was not, in fact from another dimension, but from a distant planet, Kepler 452b.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/15 -9:14 AM</div>
+                    <p class="story-text">It has been a while since the last post due to legal reasons and the government trying to conceal this information, but as we have just won a court case against the government, we will now unveil this information.  There has been a recent spike in UFO sightings, and as signals explain, these are because the Goblins and Orks have ended their 200 year long war and are now on their way to invade the Earth. Vincent has revealed he has taken a quest from a rat man, the only way to save the Earth.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/17 -3:56 PM</div>
+                    <p class="story-text">Yesterday, there was a record amount of UFO sightings. Over 770,000 people have reported sightings of glowing lights traveling at extremely fast speeds.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/19 -1:45 PM</div>
+                    <p class="story-text">The first signs of violence has broken out between the humans and Goblins/Orks. A UFO fired at a military base at the Puget Sound without reason. The military base retaliated by firing back and shooting the UFO. Sadly, the UFO self destructed, rendering the wreckage useless.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/20 -7:36 AM</div>
+                    <p class="story-text">Vincent has recently assassinated the Goblin King and killed the Ork Elder, sparking even more tension between the two planets. Vincent now only has one quest left, to find the secret chest, guarded by 200 armed guards, destroy it, and return to the Rat Man. He only has one day to complete this quest.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">2/21 -10:12 AM</div>
+                    <p class="story-text">SUCCESS! : Vincent has successfully completed his quest and returned safely, he has suffered minor injuries, but has saved Earth. He plans to go on a nice long cruise to relax after his Journey. The cruise will depart from Argentina and is called the “MV Hondius”</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="date-header">4-2 -5:54 PM</div>
+                    <p class="story-text">VIRUS OUTBREAK! : A virus has been detected on the cruise ship Vincent was on, Vincent only now realizes he destroyed the world of Goblins but forgot his laptop. The virus on the cruise ship is called “Hanta Virus”</p>
+                </div>
             </div>
 
-            <!-- 2/4-3:25 PM -->
-            <div class="article-card">
-                <div class="date-header">2/4-3:25 PM</div>
-                <p class="story-text">BREAKING NEWS: Today, a creature that many call a goblin has been seen emerging from the portal. It stole a resident of the area's computer, this is and exclusive story from the victim: “So, it was just like any other day” reported Vincent, a 13 year old living on that street. “I was peacefully playing Minecraft and I was about to get diamonds, when I heard a knock on my door. Unknowingly, it was an otherworldly creature, it reminded me of a goblin. It was also wearing a nametag that read: “Hi, my name is: Alan” the moment I opened the door, it sprang inside and STOLE MY COMPUTER” exclaimed Vincent, breaking down in tears. “I plan to DESTROY him and get my computer back.”</p>
-            </div>
-
-            <!-- 2/5- 2:14 PM -->
-            <div class="article-card">
-                <div class="date-header">2/5- 2:14 PM</div>
-                <p class="story-text">This afternoon five people have already gone through the portal, planning to help Vincent get his computer back. Vincent has put a $1,000,000 bounty on Alan the goblins head. Vincent has also gone through the portal.</p>
-            </div>
-
-            <!-- 2/5- 4:35 PM -->
-            <div class="article-card">
-                <div class="date-header">2/5- 4:35 PM</div>
-                <p class="story-text">BREAKING NEWS; ROGUE GENIE SPOTTED: This afternoon, a genie has been spotted near 15257 Vinchenzo Lane. It is believed to be related to the recent portal incidents near the same area.</p>
-            </div>
-
-            <!-- 2/6 -9:35 AM -->
-            <div class="article-card">
-                <div class="date-header">2/6 -9:35 AM</div>
-                <p class="story-text">New Insight: A mysterious radio signal has been emitted from the wave, similar to a message, it seems to be Vincent. The message reads: “Hello guys, this in Vincent. I have located Alan the goblin. There is a completely different frozen world here. Tomorrow, explore more of this undiscovered world”</p>
-            </div>
-
-            <!-- 2/7 -12:15 PM -->
-            <div class="article-card">
-                <div class="date-header">2/7 -12:15 PM</div>
-                <p class="story-text">WE ARE NOT ALONE IN THE UNIVERSE: Early this morning, a new signal, again transmitted from the unknown portal has been received, believed also to be Vincent. It states that the creature that stole his laptop was not, in fact from another dimension, but from a distant planet, Kepler 452b.</p>
-            </div>
-
-            <!-- 2/15 -->
-            <div class="article-card">
-                <div class="date-header">2/15 -9:14 AM</div>
-                <p class="story-text">It has been a while since the last post due to legal reasons and the government trying to conceal this information, but as we have just won a court case against the government, we will now unveil this information.  There has been a recent spike in UFO sightings, and as signals explain, these are because the Goblins and Orks have ended their 200 year long war and are now on their way to invade the Earth. Vincent has revealed he has taken a quest from a rat man, the only way to save the Earth.</p>
-            </div>
-
-            <!-- 2/17 -->
-            <div class="article-card">
-                <div class="date-header">2/17 -3:56 PM</div>
-                <p class="story-text">Yesterday, there was a record amount of UFO sightings. Over 770,000 people have reported sightings of glowing lights traveling at extremely fast speeds.</p>
-            </div>
-
-            <!-- 2/19 -->
-            <div class="article-card">
-                <div class="date-header">2/19 -1:45 PM</div>
-                <p class="story-text">The first signs of violence has broken out between the humans and Goblins/Orks. A UFO fired at a military base at the Puget Sound without reason. The military base retaliated by firing back and shooting the UFO. Sadly, the UFO self destructed, rendering the wreckage useless.</p>
-            </div>
-
-            <!-- 2/20 -->
-            <div class="article-card">
-                <div class="date-header">2/20 -7:36 AM</div>
-                <p class="story-text">Vincent has recently assassinated the Goblin King and killed the Ork Elder, sparking even more tension between the two planets. Vincent now only has one quest left, to find the secret chest, guarded by 200 armed guards, destroy it, and return to the Rat Man. He only has one day to complete this quest.</p>
-            </div>
-
-            <!-- 2/21 -->
-            <div class="article-card">
-                <div class="date-header">2/21 -10:12 AM</div>
-                <p class="story-text">SUCCESS! : Vincent has successfully completed his quest and returned safely, he has suffered minor injuries, but has saved Earth. He plans to go on a nice long cruise to relax after his Journey. The cruise will depart from Argentina and is called the “MV Hondius”</p>
-            </div>
-
-            <!-- 4-2 -->
-            <div class="article-card">
-                <div class="date-header">4-2 -5:54 PM</div>
-                <p class="story-text">VIRUS OUTBREAK! : A virus has been detected on the cruise ship Vincent was on, Vincent only now realizes he destroyed the world of Goblins but forgot his laptop. The virus on the cruise ship is called “Hanta Virus”</p>
+            <div id="story-2" class="tab-content">
+                <div class="article-card">
+                    <div class="date-header">Month/Day - Time PM</div>
+                    <p class="story-text">This is a placeholder for your second story timeline! 
+                    
+                    You can start adding your article structures here just like Story One, and they will only appear when this tab is selected.</p>
+                </div>
+                
+                <div class="article-card">
+                    <div class="date-header">Month/Day - Next Update</div>
+                    <p class="story-text">Another entry example goes here...</p>
+                </div>
             </div>
 
         </div>
 
         <div class="sidebar">
             
-            <!-- YouTube Channel Ad -->
             <div class="ad-container roblox-ad">
                 <span class="ad-label">Sponsored by Alex Lin's shadow</span>
                 <div class="ad-title">Subscribe to Player333!</div>
@@ -262,7 +308,6 @@
                 <a class="ad-btn roblox-btn" href="https://www.youtube.com/@AverageRobloxplayer333" target="_blank">Visit Channel</a>
             </div>
 
-            <!-- YouTube Video Ad -->
             <div class="ad-container">
                 <span class="ad-label">Sponsored Advertisement</span>
                 <div class="video-box">
@@ -273,7 +318,6 @@
                 <a class="ad-btn" href="https://www.youtube.com/watch?v=0oX7N8FTlww" target="_blank">Watch on YouTube</a>
             </div>
             
-            <!-- Skyhaul Ad -->
             <div class="ad-container roblox-ad">
                 <span class="ad-label">Sponsored by Alex Lin's second Shadow</span>
                 <div class="ad-title">Play Skyhaul!</div>
@@ -281,11 +325,10 @@
                 <a class="ad-btn roblox-btn" href="https://al2031.github.io/skyhaul/" target="_blank">Play the game!</a>
             </div>
 
-            <!-- YouTube Video Ad -->
             <div class="ad-container">
                 <span class="ad-label">Sponsored Advertisement</span>
                 <div class="video-box">
-                    <iframe src="https://www.youtube.com/watch?v=YB5QxUddhJg" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/YB5QxUddhJg" allowfullscreen></iframe>
                 </div>
                 <div class="ad-title">Taco Time</div>
                 <div class="ad-description">Get Taco Time Today!</div>
@@ -298,6 +341,26 @@
     <footer>
         <p>&copy; 2026 Genie Chronicles. All feed entries verbatim.</p>
     </footer>
+
+    <script>
+        function switchStory(evt, storyId) {
+            // Hide all tab elements
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active style from all buttons
+            var tabButtons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show the current story block and apply active styling to clicked button
+            document.getElementById(storyId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
